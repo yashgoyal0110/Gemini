@@ -60,7 +60,8 @@ const ContextProvider = (props) => {
         setInput("");
         setResultData("");
         setPrevPrompts([]);
-    };
+        setRecentPrompt("");
+      };
 
     const contextValue = {
         prevPrompts,
