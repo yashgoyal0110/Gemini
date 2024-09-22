@@ -14,14 +14,14 @@ function Sidebar() {
     <div className="sidebar">
       <div className="top">
         <img
-          className="menu"
+          className="menu" 
           onClick={() => setExtended((prev) => !prev)}
           src={assets.menu_icon}
           alt=""
         ></img>
         <div className="new-chat">
-          <img onClick = {newChat} src={assets.plus_icon} alt=""></img>
-          {extended ? <p onClick = {newChat}>New Chat</p> : null}
+          <img src={assets.plus_icon} alt="" onClick={newChat}></img>
+          {extended ? <p onClick={newChat}>New Chat</p> : null}
         </div>
         {extended ? (
           <div className="recent">
