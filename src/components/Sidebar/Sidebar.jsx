@@ -43,7 +43,7 @@ function Sidebar() {
       </div>
 
       <div className="bottom">
-        <a href = "https://gemini.google/advanced/?hl=en-IN" target="_blank"><div className="bottom-item recent-entry">
+        <a href = "https://gemini.google.com/faq?hl=en-IN" target="_blank"><div className="bottom-item recent-entry">
           <img src={assets.question_icon} alt=""></img>
           {extended ?<p>Help</p>  : null}
         </div></a>
