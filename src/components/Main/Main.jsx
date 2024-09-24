@@ -3,12 +3,9 @@ import "./Main.css";
 import { Context } from "../../context/Context";
 import { useContext } from "react";
 import Clerk from "../Clerk";
-// import { useRef } from "react";
-
+import { useUser } from "@clerk/clerk-react";
 
 function Main() {
-  
- 
   const {
     onSent,
     recentPrompt,
@@ -17,23 +14,28 @@ function Main() {
     resultData,
     setInput,
     input,
-    handleKeyPress
+    handleKeyPress,
   } = useContext(Context);
+
+  const { isSignedIn, user } = useUser();
 
   return (
     <div className="main">
       <div className="nav">
         <p>Gemini</p>
 
-        <Clerk>
-</Clerk>
+        <Clerk></Clerk>
       </div>
       <div className="main-container">
         {!showResult ? (
           <>
             <div className="greet">
               <p>
-                <span>Hello, Yash</span>
+                {isSignedIn ? (
+                  <span>Hello, {user.firstName}</span>
+                ) : (
+                  <span>Hello.</span>
+                )}
               </p>
               <p>How can i help you today?</p>
             </div>
@@ -53,38 +55,36 @@ function Main() {
                 <img src={assets.compass_icon} alt="" />
               </div>
               <div
-              onClick={() => {
-                setInput(
-                  "Briefly summarize this concept: urban planning"
-                );
-                onSent(
-                  "Briefly summarize this concept: urban planning"
-                );
-              }} className="card">
+                onClick={() => {
+                  setInput("Briefly summarize this concept: urban planning");
+                  onSent("Briefly summarize this concept: urban planning");
+                }}
+                className="card"
+              >
                 <p>Briefly summarize this concept: urban planning</p>
                 <img src={assets.bulb_icon} alt="" />
               </div>
               <div
-              onClick={() => {
-                setInput(
-                  "Brainstorm team bonding activities for our work retreat"
-                );
-                onSent(
-                  "Brainstorm team bonding activities for our work retreat"
-                );
-              }} className="card">
+                onClick={() => {
+                  setInput(
+                    "Brainstorm team bonding activities for our work retreat"
+                  );
+                  onSent(
+                    "Brainstorm team bonding activities for our work retreat"
+                  );
+                }}
+                className="card"
+              >
                 <p>Brainstorm team bonding activities for our work retreat</p>
                 <img src={assets.message_icon} alt="" />
               </div>
               <div
-              onClick={() => {
-                setInput(
-                  "Improve the readability of following code"
-                );
-                onSent(
-                  "Improve the readability of following code"
-                );
-              }} className="card">
+                onClick={() => {
+                  setInput("Improve the readability of following code");
+                  onSent("Improve the readability of following code");
+                }}
+                className="card"
+              >
                 <p>Improve the readability of following code</p>
                 <img src={assets.code_icon} alt="" />
               </div>
@@ -118,26 +118,10 @@ function Main() {
               value={input}
               type="text"
               placeholder="Enter your prompt here"
-              onKeyDown = {handleKeyPress}
+              onKeyDown={handleKeyPress}
             ></input>
             <div>
-            <img src={assets.gallery_icon} alt="" />
-             {/* <div>
-      <input
-        type="file"
-        id="file"
-        ref={fileInputRef}
-        style={{ display: 'none' }} // Hide the file input
-        accept="image/*" // Accept only image files
-        onChange={handleFileChange} // Handle file selection
-      />
-      <img
-        src={assets.gallery_icon}
-        alt="Upload"
-        style={{ cursor: 'pointer', width: '48px', height: '48px' }} // Style as needed
-        onClick={handleImageClick} // Trigger file input on click
-      />
-    </div> */}
+              <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
               <img
                 onClick={() => onSent(input)}
