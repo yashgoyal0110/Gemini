@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 function Sidebar() {
   const [extended, setExtended] = useState(false);
-  const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
+  const { onSent, prevPrompts, setRecentPrompt, newChat,} = useContext(Context);
 
   const loadPrompt = async (prompt) => {
     setRecentPrompt(prompt);
@@ -43,20 +43,20 @@ function Sidebar() {
       </div>
 
       <div className="bottom">
-        <a href = "https://gemini.google.com/faq?hl=en-IN" target="_blank"><div className="bottom-item recent-entry">
+        <a href = "https://gemini.google/advanced/?hl=en-IN" target="_blank"><div className="bottom-item recent-entry">
           <img src={assets.question_icon} alt=""></img>
           {extended ?<p>Help</p>  : null}
         </div></a>
 
-        <div className="bottom-item recent-entry">
+        <a href = "https://myactivity.google.com/product/gemini?utm_source=gemini" target="_blank"><div className="bottom-item recent-entry">
           <img src={assets.history_icon} alt=""></img>
           {extended ? <p>Activity</p> : null}
-        </div>
+        </div></a>
 
-        <div className="bottom-item recent-entry">
-          <img src={assets.setting_icon} alt=""></img>
-          {extended ? <p>Setting</p> : null}
-        </div>
+        <a href = "https://gemini.google.com/extensions" target="_blank"><div className="bottom-item recent-entry">
+        <img src={assets.setting_icon} alt=""></img>
+        {extended ? <p>Setting</p> : null}
+        </div></a>
       </div>
     </div>
   );
