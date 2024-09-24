@@ -1,4 +1,4 @@
-// const GEMINI_API_KEY = import.meta.env.API_KEY
+const GEMINI_API_KEY = import.meta.env.VITE_API_KEY
 
 import {
   GoogleGenerativeAI,
@@ -8,7 +8,7 @@ import {
 
 
 
-  const apiKey = "AIzaSyDgYFTU3-TwdPAvOuFYwJ5YvdT6VpOtM5E"
+  const apiKey = GEMINI_API_KEY;
   
   const genAI = new GoogleGenerativeAI(apiKey);
   
@@ -39,3 +39,4 @@ import {
   }
   
   export default run;
+
