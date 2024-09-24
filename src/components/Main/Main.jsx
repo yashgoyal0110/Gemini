@@ -7,15 +7,6 @@ import Clerk from "../Clerk";
 
 
 function Main() {
-  // const fileInputRef = useRef(null);
-  // const handleImageClick = () => 
-  //   fileInputRef.current.click();
-  // const handleFileChange = (event) => {
-  //   const file = event.target.files[0]; // Get the selected file
-  //   if (file) {
-  //     onSent(file); // Call the onSent function with the selected file
-  //   }
-  // };
   
  
   const {
@@ -26,6 +17,7 @@ function Main() {
     resultData,
     setInput,
     input,
+    handleKeyPress
   } = useContext(Context);
 
   return (
@@ -126,6 +118,7 @@ function Main() {
               value={input}
               type="text"
               placeholder="Enter your prompt here"
+              onKeyDown = {handleKeyPress}
             ></input>
             <div>
             <img src={assets.gallery_icon} alt="" />
