@@ -179,3 +179,7 @@
     font-weight: 300;
     line-height: 1.8;
 }
+#privacy{
+    color: #4b90ff;
+    text-decoration: underline;
+}
