@@ -83,6 +83,13 @@ const ContextProvider = (props) => {
         setRecentPrompt("");
     }
 
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            onSent();
+        }
+    }
+    
+
     const contextValue = {
         prevPrompts,
         setPrevPrompts,
@@ -94,7 +101,8 @@ const ContextProvider = (props) => {
         resultData,
         input,
         setInput,
-        newChat
+        newChat,
+        handleKeyPress
     }
 
     return (
