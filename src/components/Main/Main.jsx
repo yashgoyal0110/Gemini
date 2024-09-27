@@ -117,7 +117,7 @@ function Main() {
               onChange={(e) => setInput(e.target.value)}
               value={input}
               type="text"
-              placeholder="Enter your prompt"
+              placeholder="Enter a prompt here"
               onKeyDown={handleKeyPress}
             ></input>
             <div>
