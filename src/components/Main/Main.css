@@ -199,3 +199,62 @@
         gap: 5px;
     }
 }
+@media (max-width: 375px) {
+        .main-bottom {
+            margin-bottom: 20px; 
+        }
+    
+        .main-bottom input {
+            flex: none;
+            width: 140px;
+            margin-top: 10px;
+        }
+    
+
+        .main-bottom img {
+            width: 18px;
+        }
+    
+ 
+        .search-box {
+            padding: 5px 8px;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    
+        .search-box div {
+            gap: 3px;
+        }
+    
+        .main .cards {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+    
+        .main .card {
+            height: 180px;
+            padding: 10px;
+        }
+    
+        .main .greet {
+            margin: 30px 0px;
+            font-size: 40px;
+        }
+    
+        .main .greet span {
+            font-size: 36px;
+        }
+    
+        .result {
+            padding: 0px 5%;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+    
+        .loader hr {
+            height: 15px;
+        }
+        .bottom-info{
+            display: none;
+        }
+    }
