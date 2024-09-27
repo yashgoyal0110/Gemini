@@ -117,17 +117,17 @@ function Main() {
               onChange={(e) => setInput(e.target.value)}
               value={input}
               type="text"
-              placeholder="Enter your prompt here"
+              placeholder="Enter your prompt"
               onKeyDown={handleKeyPress}
             ></input>
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img
+              {input?<img
                 onClick={() => onSent(input)}
                 src={assets.send_icon}
-                alt=""
-              />
+                alt="Send"
+              /> : null}
             </div>
           </div>
           <p className="bottom-info">
